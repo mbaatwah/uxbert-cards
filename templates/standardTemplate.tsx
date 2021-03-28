@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function StandardTemplate({children, pageTitle=''}: {children: any, pageTitle: string}){
     return (
-        <div className="container">
+        <div id="mainContainer" className="container" style={{paddingBottom: '12rem'}}>
             <Head key={1}>
                 <title>{pageTitle} | CardApp</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -17,27 +17,31 @@ export default function StandardTemplate({children, pageTitle=''}: {children: an
                     <a className="nav-link" href="/about">About</a>
                 </nav>
             </header>
-            <main style={{minHeight: '50vh'}}>
+            <main>
                 {children}
             </main>
             <footer>
-                <div className="row mt-4 d-flex align-justify-left">
-                    <ul className="text-left">
-                        <li className="p-1 d-block"><Link href="/">Home</Link></li>
-                        <li className="p-1 d-block"><Link href="/posts">Posts</Link></li>
-                        <li className="p-1 d-block"><Link href="/about">About</Link></li>
-                    </ul>
+                <div className="row mt-4  ">
+                    <div className="col-12 d-flex align-justify-left">
+                        <ul className="p-0 text-left">
+                            <li className="p-1 d-block"><Link href="/">Home</Link></li>
+                            <li className="p-1 d-block"><Link href="/posts">Posts</Link></li>
+                            <li className="p-1 d-block"><Link href="/about">About</Link></li>
+                        </ul>
 
-                    <ul className="text-left">
-                        <li className="p-1 d-block">Terms & Conditions</li>
-                        <li className="p-1 d-block">Privacy Policy</li>
-                    </ul>
+                        <ul className="pl-2 text-left">
+                            <li className="p-1 d-block">Terms & Conditions</li>
+                            <li className="p-1 d-block">Privacy Policy</li>
+                        </ul>
+                        
+                        <ul className="text-left ml-auto">
+                            <li className="p-1 d-block">Facebook</li>
+                            <li className="p-1 d-block">Twitter</li>
+                            <li className="p-1 d-block">Linkedin</li>
+                        </ul>
+
+                    </div>
                     
-                    <ul className="text-center ml-auto px-4">
-                        <li className="p-1 d-block">Facebook</li>
-                        <li className="p-1 d-block">Twitter</li>
-                        <li className="p-1 d-block">Linkedin</li>
-                    </ul>
                     
                 </div>
                 <div className="row no-gutters">
